@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AlphaBlog</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+
+  <header>
+     <h1>Blog App</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><%=link_to 'Home', pages_home_path %></li>
+      <li><%=link_to 'About', pages_about_path %></li>
+    </ul>
+  </nav>
+
+  <div>
+  <%= yield %>
+
+<footer>Copyright © W3Schools.com</footer>
+</body>
+</html>
